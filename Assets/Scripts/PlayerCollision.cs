@@ -7,9 +7,10 @@ public class PlayerCollision : MonoBehaviour
     {
         if (other.CompareTag("Collectable"))
         {
-            if (Input.GetButtonDown("Fire1")) //ERROR 按鍵無觸發
+            GameObject.Find("stick").GetComponent<PickedUp>().PickUITrigger(); // 呼叫互動欄使其顯示 ERROR收不回來
+
+            if (Input.GetButtonDown("Fire1")) //ERROR 按鍵觸發機制奇怪
             {
-                Debug.Log("IN");
                 GameObject.Find("stick").GetComponent<PickedUp>().PickItem(); // 從 "stick" 物件找程式碼 "PickedUp" 並呼叫函式 "PickItem"
             }
         }
