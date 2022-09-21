@@ -7,7 +7,6 @@ public class PlayerCollision : MonoBehaviour
     {
         if (other.CompareTag("Collectable"))
         {
-            GameObject.Find("stick").GetComponent<PickedUp>().PickUITrigger(); // 呼叫互動欄使其顯示 ERROR收不回來
 
             if (Input.GetButtonDown("Fire1")) //ERROR 按鍵觸發機制奇怪
             {

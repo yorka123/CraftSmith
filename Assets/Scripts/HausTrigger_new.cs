@@ -10,8 +10,10 @@ public class HausTrigger_new : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
         if (collision.CompareTag("Player")) // CompareTag: 跟.tag== 一樣，但速度比較快
         {
+            
             Animator.SetBool("TriggerIn", true);
             // Fade Out
         }
@@ -19,8 +21,10 @@ public class HausTrigger_new : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        
         if (collision.CompareTag("Player"))
         {
+            
             Animator.SetBool("TriggerIn", false);
             // Fade in
         }
