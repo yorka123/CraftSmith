@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickedUp : MonoBehaviour
+public class PickUITrigger : MonoBehaviour
 {
     public GameObject PickUI;
 
@@ -13,18 +13,18 @@ public class PickedUp : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        PickUI.SetActive(true);
+        if (collision.CompareTag("Player"))
+        {
+            PickUI.SetActive(true);
+            // 顯示提示欄
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        PickUI.SetActive(false);
-    }
-
-    public void PickItem()
-    {
-        
-        Debug.Log("PICKED");
-        // 摧毀物件 然後放到類似物品欄的東西裡
+        if (collision.CompareTag("Player"))
+        {
+            PickUI.SetActive(false);
+        }
     }
 }

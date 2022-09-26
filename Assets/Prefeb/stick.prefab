@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9079886736307026909}
   - component: {fileID: 2409873976410681457}
   - component: {fileID: -6388899316579586506}
-  - component: {fileID: 1152230985855516944}
+  - component: {fileID: 4387921601564823944}
   m_Layer: 0
   m_Name: stick
   m_TagString: Collectable
@@ -101,7 +101,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2.18
---- !u!114 &1152230985855516944
+--- !u!114 &4387921601564823944
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8464882146523325654}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2986fe809c38d364fa795cb6ebaeecbd, type: 3}
+  m_Script: {fileID: 11500000, guid: 16d6017542ff85a4684124abe0bfea58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   PickUI: {fileID: 5196217491341542078}
