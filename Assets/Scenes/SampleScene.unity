@@ -768,9 +768,9 @@ GameObject:
   - component: {fileID: 1316366321}
   - component: {fileID: 1316366320}
   - component: {fileID: 1316366318}
-  - component: {fileID: 1316366317}
   - component: {fileID: 1316366319}
   - component: {fileID: 1316366323}
+  - component: {fileID: 1316366317}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -778,8 +778,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!70 &1316366317
-CapsuleCollider2D:
+--- !u!58 &1316366317
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -792,8 +792,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 1.9999999}
-  m_Direction: 0
+  serializedVersion: 2
+  m_Radius: 1.7108295
 --- !u!50 &1316366318
 Rigidbody2D:
   serializedVersion: 4
@@ -813,7 +813,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &1316366319
 MonoBehaviour:
@@ -1493,6 +1493,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6388899316579586506, guid: dec55ff00872831419d28a4404bb0477, type: 3}
+      propertyPath: m_Radius
+      value: 0.9925047
+      objectReference: {fileID: 0}
+    - target: {fileID: -6388899316579586506, guid: dec55ff00872831419d28a4404bb0477, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8464882146523325654, guid: dec55ff00872831419d28a4404bb0477, type: 3}
       propertyPath: m_Name
       value: stick

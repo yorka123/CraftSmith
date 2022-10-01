@@ -7,6 +7,14 @@ public class PickSystem : MonoBehaviour
     bool Pick = false;
     GameObject PickObject; // 被撿取物件
 
+    private void Update()
+    {
+        if (Input.GetButtonDown("Submit")) // F or Enter
+        {
+            Pick = true;
+        }
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Collectable"))
