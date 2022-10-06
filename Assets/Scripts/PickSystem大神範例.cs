@@ -14,8 +14,8 @@ public class PickSystem2 : MonoBehaviour
     {
         if (Input.GetButtonDown("Submit"))
         {
-            List<Collider2D> results = new List<Collider2D>(); // 宣布一個List，型態為Collider2D
-            if (Physics2D.OverlapCollider(_collider2d, _contactFilter2d, results) > 0) // OverlapCollider又是啥？？
+            List<Collider2D> results = new List<Collider2D>(); // List<元素類型>名字 = new List
+            if (Physics2D.OverlapCollider(_collider2d, _contactFilter2d, results) > 0) // OverlapCollider：計算碰撞重疊數量(maybe)
             {
                 foreach (var collider2D in results) // var：在編譯期間被指派明確的類別(ex：現在是Collider2D)
                 {
@@ -23,7 +23,7 @@ public class PickSystem2 : MonoBehaviour
                     {
                         //撿起物品
 
-                        Destroy(collider2D.gameObject);
+                        Debug.Log("Collided!");
                     }
                 }
             }

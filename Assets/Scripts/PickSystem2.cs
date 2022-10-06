@@ -15,15 +15,17 @@ public class PickSystem大神範例 : MonoBehaviour
         if (Input.GetButtonDown("Submit"))
         {
             List<Collider2D> results = new List<Collider2D>(); // 宣布一個List，型態為Collider2D；new list：建置新陣列(ex."results"為被創造出的新陣列)
-            
-            if (Physics2D.OverlapCollider(_collider2d, _contactFilter2d, results) > 0) // OverlapCollider(被撿取物, 角色, 重疊數量(回傳的值從results來))
+
+                if (Physics2D.OverlapCollider(_collider2d, _contactFilter2d, results) > 0) // OverlapCollider(角色, 被撿取物, 重疊物數量)
+                                                                                       // ex.一物 = 1，二物 = 2，無 = 0
+                                                                                       // 是個函式啦 會獲得所有碰撞物的清單 回傳result內的碰撞物數量(int)
             {
                 foreach (var collider2D in results) // var：在編譯期間被指派明確的類別(ex：現在是Collider2D)；foreach(~in results)：一項一項讀取
                 {
+
                     if (collider2D.CompareTag("Collectable"))
                     {
                         //撿起物品
-
                         Destroy(collider2D.gameObject);
                     }
                 }
