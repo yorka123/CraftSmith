@@ -14,10 +14,32 @@ public class BagUnit : MonoBehaviour
 
     public void Refresh(ItemData itemData)
     {
+        if (itemData == null)
+        {
+            m_Icon.sprite = null;
+            m_CountText = null;
+            m_EquipText = null;
+            return;
+        }
+
         m_TempData = itemData;
         m_Icon.sprite = itemData.Icon;
         m_CountText.text = itemData.m_Count.ToString();
         m_EquipText.text = "";
     }
 
+    public void OnEquip(bool equip)
+    {
+        m_TempData.m_Equip = equip;
+        RefreshEquip();
+
+    }
+
+    public void RefreshEquip()
+    {
+        if (m_TempData.m_Equip)
+            m_EquipText.text = "¸Ë³Æ¤¤";
+        else
+            m_EquipText.text = "";
+    }
 }
