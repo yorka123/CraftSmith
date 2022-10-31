@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickSystem大神範例 : MonoBehaviour
+public class PickSystem2 : MonoBehaviour
 {
     [SerializeField] // [SerializeField]：將private/protected變量可序列化，下次讀取的值即為上次賦予的值
     private Collider2D _collider2d;
