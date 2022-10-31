@@ -4,41 +4,47 @@ using UnityEngine;
 
 public class PickSystem : MonoBehaviour
 {
-    bool Pick = false;
-    GameObject PickObject; // 被撿取物件
 
-    private void Update()
+    private Inventory inventory;
+
+    [SerializeField] // [SerializeField]：將private/protected變量可序列化，下次讀取的值即為上次賦予的值
+    private Collider2D _collider2d;
+
+    [SerializeField]
+    private ContactFilter2D _contactFilter2d; //  ContactFilter2D：可以自訂義的碰撞判定(控制面板在Unity)
+
+    private void Start()
     {
-        if (Input.GetButtonDown("Submit")) // F or Enter
-        {
-            Pick = true;
-        }
+        inventory = GetComponent<Inventory>();
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    void Update()
     {
-        if (collision.CompareTag("Collectable"))
+        if (Input.GetButtonDown("Submit"))
         {
-            if (Input.GetButtonDown("Submit")) // F or Enter
+            List<Collider2D> results = new List<Collider2D>(); // 宣布一個List，型態為Collider2D；new list：建置新陣列(ex."results"為被創造出的新陣列)
+
+                if (Physics2D.OverlapCollider(_collider2d, _contactFilter2d, results) > 0) // OverlapCollider(角色, 被撿取物, 重疊物數量)
+                                                                                       // ex.一物 = 1，二物 = 2，無 = 0
+                                                                                       // 是個函式啦 會獲得所有碰撞物的清單 回傳result內的碰撞物數量(int)
             {
-                PickObject = collision.gameObject;
-                Pick = true; // 改：為了讓判定不會被重置(但好像沒用)
-                // ERROR 現在變成在範圍中偶爾判定一次成功
+                foreach (var collider2D in results) // var：在編譯期間被指派明確的類別(ex：現在是Collider2D)；foreach(~in results)：一項一項讀取
+                {
+
+                    if (collider2D.CompareTag("Collectable"))
+                    {
+                        for (int i = 0; i < inventory.slots.Length; i++)
+                        {
+                            if (inventory.isFull[i] == false)
+                            {
+                                inventory.isFull[i] = true;
+                                //撿起物品
+                                Destroy(collider2D.gameObject);
+                            }
+                        }
+                    }
+                }
             }
-
-        }
-    }
-
-    private void FixedUpdate()
-    {
-        if (Pick)
-        {
-            Debug.Log("You have collected an item!");
-            
-            Destroy(PickObject);
-            
-            Pick = false;
-            // 然後放入物品欄之類的
         }
     }
 }
