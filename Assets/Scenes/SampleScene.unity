@@ -1619,7 +1619,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 
   slots: []
-  SlotManager: {fileID: 0}
+  SlotManager: {fileID: 239133320}
 --- !u!114 &1316366323
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -34,7 +34,7 @@ public class PickSystem : MonoBehaviour
 
                     if (collider2D.CompareTag("Collectable"))
                     {
-                        for (int i = 0; i < inventory.slots.Length; i++) // 依照順序檢索空物品欄
+                        for (int i = 0; i < inventory.slots.Count; i++) // 依照順序檢索空物品欄
                         {
                             if (inventory.isFull[i] == false)
                             {
