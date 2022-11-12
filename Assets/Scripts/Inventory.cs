@@ -13,7 +13,7 @@ public class Inventory : MonoBehaviour
     {
         for (int i = 0; i < SlotManager.transform.childCount; i++) // childCount: 取得子物件數量
         {
-            slots.Add(SlotManager.transform.GetChild(i).gameObject);
+            slots.Add(SlotManager.transform.GetChild(i).gameObject); //子物件放入物品欄內
             isFull.Add(false);
         }
         // 添加isFull內bool數
