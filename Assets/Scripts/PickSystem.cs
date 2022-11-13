@@ -6,7 +6,7 @@ public class PickSystem : MonoBehaviour
 {
 
     private Inventory inventory;
-    public GameObject item;
+    public Item item;
 
     [SerializeField] // [SerializeField]：將private/protected變量可序列化，下次讀取的值即為上次賦予的值
     private Collider2D _collider2d;
@@ -34,18 +34,8 @@ public class PickSystem : MonoBehaviour
 
                     if (collider2D.CompareTag("Collectable"))
                     {
-                        for (int i = 0; i < inventory.slots.Count; i++) // 依照順序檢索空物品欄
-                        {
-                            if (inventory.isFull[i] == false)
-                            {
-                                inventory.isFull[i] = true;
-                                // 物品放入物品欄內
-                                Instantiate(item, inventory.slots[i].transform);
-
-                                Destroy(collider2D.gameObject);
-                                break;
-                            }
-                        }
+                         Inventory.instance.Add(collider2D, item);
+                         Destroy(collider2D.gameObject);
                     }
                 }
             }
