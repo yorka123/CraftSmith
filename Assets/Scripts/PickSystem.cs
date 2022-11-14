@@ -5,7 +5,6 @@ using UnityEngine;
 public class PickSystem : MonoBehaviour
 {
 
-    private Inventory inventory;
     public Item item;
 
     [SerializeField] // [SerializeField]：將private/protected變量可序列化，下次讀取的值即為上次賦予的值
@@ -13,11 +12,6 @@ public class PickSystem : MonoBehaviour
 
     [SerializeField]
     private ContactFilter2D _contactFilter2d; //  ContactFilter2D：可以自訂義的碰撞判定(控制面板在Unity)
-
-    private void Start()
-    {
-        inventory = GetComponent<Inventory>();
-    }
 
     void Update()
     {
