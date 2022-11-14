@@ -43,7 +43,7 @@ public class Inventory : MonoBehaviour
             if (isFull[i] == false)
             {
                 isFull[i] = true;
-                // 物品放入物品欄內
+                // 物品放入物品欄內 +待改
 
                 Instantiate(collider2D, slots[i].transform);
                 items.Add(item);

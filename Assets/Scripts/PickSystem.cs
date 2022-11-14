@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PickSystem : MonoBehaviour
 {
-
+    // 待改：使裏頭程式重複使用化
     public Item item;
 
     [SerializeField] // [SerializeField]：將private/protected變量可序列化，下次讀取的值即為上次賦予的值
