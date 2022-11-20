@@ -9,5 +9,17 @@ public class ItemPickup : Interactable // «Ýµ§¡GInteractable
     public override void Interact()
     {
         base.Interact();
+        Pickup();
+    }
+
+    void Pickup()
+    {
+
+    }
+
+    bool CheckCollisions(Collider2D PCollider, Vector2 direction, float radious)
+    {
+        // if DID hit collider
+        return true;
     }
 }
