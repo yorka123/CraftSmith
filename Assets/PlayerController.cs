@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     {
 
 
-        if (Input.GetKeyDown("Submit"))
+        if (Input.GetButtonDown("Submit"))
         {
             
             // ¨Ï¥ÎCollider.cast

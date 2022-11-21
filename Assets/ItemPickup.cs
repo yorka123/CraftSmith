@@ -14,12 +14,7 @@ public class ItemPickup : Interactable // «Ýµ§¡GInteractable
 
     void Pickup()
     {
-
+        Debug.Log("PICKEDUP");
     }
 
-    bool CheckCollisions(Collider2D PCollider, Vector2 direction, float radious)
-    {
-        // if DID hit collider
-        return true;
-    }
 }
