@@ -25,10 +25,9 @@ public class PickSystem : MonoBehaviour
             {
                 foreach (var collider2D in results) // var：在編譯期間被指派明確的類別(ex：現在是Collider2D)；foreach(~in results)：一項一項讀取
                 {
-
                     if (collider2D.CompareTag("Collectable"))
                     {
-                         Inventory.instance.Add(collider2D, item);
+                         // Inventory.instance.Add(collider2D, item);
                          Destroy(collider2D.gameObject);
                     }
                 }

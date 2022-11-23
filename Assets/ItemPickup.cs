@@ -6,7 +6,7 @@ public class ItemPickup : Interactable // «Ýµ§¡GInteractable
 {
     public Item item;
     
-    public override void Interact()
+    public override void Interact() // Ä~©Ó Iteract()(Interactable)
     {
         base.Interact();
         Pickup();
@@ -15,6 +15,8 @@ public class ItemPickup : Interactable // «Ýµ§¡GInteractable
     void Pickup()
     {
         Debug.Log("PICKEDUP");
+        Inventory.Instance.Add(item);
+        Destroy(gameObject);
     }
 
 }

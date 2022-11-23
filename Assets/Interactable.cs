@@ -6,7 +6,7 @@ public class Interactable : MonoBehaviour
 {
     // 待增：判定範圍(取代collider-trigger?) (NO
 
-    public float radius = 0.01f;
+    public float radius =   1f;
     public Transform player;
 
     bool hasIntereacted = false;
