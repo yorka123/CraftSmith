@@ -15,8 +15,10 @@ public class ItemPickup : Interactable // «Ýµ§¡GInteractable
     void Pickup()
     {
         Debug.Log("PICKEDUP");
-        Inventory.Instance.Add(item);
-        Destroy(gameObject);
+        bool wasPickedUp = Inventory.Instance.Add(item);
+    
+        if (wasPickedUp)
+            Destroy(gameObject);
     }
 
 }
