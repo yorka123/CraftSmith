@@ -18,17 +18,33 @@ public class Inventory : MonoBehaviour
     }
     #endregion
     //region-endregion：收納程式碼(使可疊合)
+    
+    public delegate void OnItemChanged(); // delagate：(method)委託，用於執行事件清單
+    public OnItemChanged onItemChangedCallback; // 更新UI用
 
     public List<Item> items = new List<Item>();
 
-    public void Add(Item item)
+    public int space = 20;
+
+    public bool Add(Item item)
     {
-        items.Add(item);
+        if (items.Count < space) { 
+            items.Add(item); 
+            return true;
+        }
+
+        if (onItemChangedCallback != null)
+            onItemChangedCallback.Invoke(); // Invoke：就 執行 | 可簡化變成 委派名稱(參數群)
+
+        return false;
     }
 
     public void Remove(Item item)
     {
         items.Remove(item);
+
+        if (onItemChangedCallback != null)
+            onItemChangedCallback.Invoke();
     }
 
 }
