@@ -14,11 +14,17 @@ public class ItemPickup : Interactable // «Ýµ§¡GInteractable
 
     void Pickup()
     {
-        Debug.Log("PICKEDUP");
-        bool wasPickedUp = Inventory.Instance.Add(item);
-    
-        if (wasPickedUp)
-            Destroy(gameObject);
+        if (Input.GetButtonDown("Submit"))
+        {
+            Debug.Log("Picked");
+            bool wasInterected = Inventory.Instance.Add(item);
+            if (wasInterected)
+            {
+                Destroy(gameObject);
+            }
+        }
+
+
     }
 
 }

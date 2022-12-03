@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b1a011b48096534ca3d5f3684ee5114, type: 3}
-  m_Name: New Item 1
+  m_Script: {fileID: 11500000, guid: d7b6ba620892f3b42b60bbb88ca7b979, type: 3}
+  m_Name: Rock
   m_EditorClassIdentifier: 
   data:
-    name: New Item
-    icon: {fileID: 0}
+    name: Rock
+    icon: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
