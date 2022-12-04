@@ -6,4 +6,11 @@ using UnityEngine;
 public class Equipment : Item
 {
 
+    public EquipmentSlot equipSlot;
+
+    public int armorModifier;
+    public int DamageModifier;
+
 }
+
+public enum EquipmentSlot { Accessory, Weapon, Armor }
