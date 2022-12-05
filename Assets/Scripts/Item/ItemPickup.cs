@@ -16,10 +16,11 @@ public class ItemPickup : Interactable // «Ýµ§¡GInteractable
     {
         if (Input.GetButtonDown("Submit"))
         {
-            Debug.Log("Picked");
+            Debug.Log("Interacting with" + item.name);
             bool wasInterected = Inventory.Instance.Add(item);
             if (wasInterected)
             {
+                Debug.Log("Picking up" + item.name);
                 Destroy(gameObject);
             }
         }

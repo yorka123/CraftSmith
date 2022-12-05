@@ -8,11 +8,11 @@ public class Interactable : MonoBehaviour
     public float radius;
     public Transform player;
 
-    public bool hasInterected = false;
+    // public bool hasInterected = false;
 
     public virtual void Interact()
     {
-        hasInterected= true;
+        // hasInterected= true;
         // 此函式旨於被覆寫
     }
 
@@ -21,13 +21,14 @@ public class Interactable : MonoBehaviour
         float distance = Vector2.Distance(player.position, transform.position);
         if (distance <= radius)
         {
-            hasInterected = true;
+            /* hasInterected = true;
             
             if (radius == distance) // Call不到，有可能因為判定太準確了(精準要那個距離)，可能需要另外一個distance界定邊緣範圍
                 {
                     Debug.Log("Touch Edge");
                     hasInterected= false;
                 }
+            */
             Interact();
         }
     }

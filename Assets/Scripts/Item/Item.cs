@@ -14,5 +14,4 @@ public class Item : ScriptableObject //¸ê·½ÀÉ«Å§i
 {
     
     public Data data;
-
 }

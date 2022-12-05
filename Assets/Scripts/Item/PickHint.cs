@@ -7,9 +7,9 @@ public class PickHint : Interactable
     public override void Interact() // Ä~©Ó Iteract()(Interactable)
     {
         base.Interact();
-        if (hasInterected!)
-            hide();
-        else
+        // if (hasInterected!)
+        //    hide();
+        // else
             appear();
 
     }

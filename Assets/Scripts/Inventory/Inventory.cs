@@ -29,13 +29,15 @@ public class Inventory : MonoBehaviour
     public bool Add(Item item)
     {
         if (items.Count < space) { 
-            items.Add(item); 
+            items.Add(item);
+
+            if (onItemChangedCallback != null)
+                onItemChangedCallback(); // Invoke：就 執行 | 可簡化變成 委派名稱(參數群)
+            
             return true;
         }
 
-        if (onItemChangedCallback != null)
-            onItemChangedCallback.Invoke(); // Invoke：就 執行 | 可簡化變成 委派名稱(參數群)
-
+        Debug.Log("Not enough room.");
         return false;
     }
 
