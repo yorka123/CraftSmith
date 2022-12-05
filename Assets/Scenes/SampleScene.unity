@@ -2650,6 +2650,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1316366321}
+    - target: {fileID: 7380462888397232237, guid: dec55ff00872831419d28a4404bb0477, type: 3}
+      propertyPath: hasInterected
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8464882146523325654, guid: dec55ff00872831419d28a4404bb0477, type: 3}
       propertyPath: m_Name
       value: stick(1)

@@ -7,8 +7,11 @@ public class PickHint : Interactable
     public override void Interact() // 繼承 Iteract()(Interactable)
     {
         base.Interact();
-        appear();
-        
+        if (hasInterected!)
+            hide();
+        else
+            appear();
+
     }
 
     public GameObject pickHint;
@@ -18,8 +21,8 @@ public class PickHint : Interactable
         pickHint.SetActive(true);
     }
 
-    void Hide()
+    void hide()
     {
-        pickHint.SetActive(false); // 不知道要怎麼觸發
+        pickHint.SetActive(false); // 現在的解法是判定物體有沒有在表面上，再設定隱藏，有點粗糙的想法
     }
 }
