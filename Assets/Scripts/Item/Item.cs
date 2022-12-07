@@ -14,4 +14,13 @@ public class Item : ScriptableObject //¸ê·½ÀÉ«Å§i
 {
     
     public Data data;
+
+    public virtual void Use()
+    {
+        // Use the item
+        // Somthing will happen
+
+        Debug.Log("Using " + name);
+    }
+
 }
