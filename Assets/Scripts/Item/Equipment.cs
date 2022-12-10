@@ -11,6 +11,13 @@ public class Equipment : Item
     public int armorModifier;
     public int DamageModifier;
 
+    public override void Use()
+    {
+        base.Use();
+        EquipManager.instance.Equip(this);
+        RemoveFromInventory();
+    }
+
 }
 
 public enum EquipmentSlot { Accessory, Weapon, Armor }

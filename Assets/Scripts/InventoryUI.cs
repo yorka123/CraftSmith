@@ -18,12 +18,6 @@ public class InventoryUI : MonoBehaviour
         // 取得物品欄的Compoments
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void UpdateUI()
     {
         for (int i = 0;i< slots.Length;i++)
