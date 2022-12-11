@@ -37,7 +37,8 @@ public class Inventory : MonoBehaviour
             return true;
         }
 
-        Debug.Log("Not enough room.");
+        Debug.Log("Not enough room."); 
+        // Bug：物品欄滿時，將裝備中的物品取下被判定空間不足，直接刪除
         return false;
     }
 

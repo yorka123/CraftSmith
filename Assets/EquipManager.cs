@@ -16,6 +16,9 @@ public class EquipManager : MonoBehaviour
     Equipment[] currentEquipment;
     Inventory inventory;
 
+    public delegate void OnEquipmentChanged(Equipment newItem, Equipment olditem);
+    public OnEquipmentChanged onEquipmentChanged;
+
     private void Start()
     {
         inventory = Inventory.Instance;
@@ -37,7 +40,44 @@ public class EquipManager : MonoBehaviour
             inventory.Add(oldItem);
         } // 舊物品放回Inventory上
 
+        if (onEquipmentChanged != null)
+        {
+            onEquipmentChanged(oldItem, newItem);
+        }
+
         currentEquipment[slotIndex] = newItem;
+    }
+
+    public void Unequip(int slotIndex)
+    {
+        if (currentEquipment[slotIndex] != null)
+        {
+            Equipment oldItem = currentEquipment[slotIndex];
+            inventory.Add(oldItem);
+
+            currentEquipment[slotIndex] = null;
+
+            if (onEquipmentChanged != null)
+            {
+                onEquipmentChanged(null, oldItem);
+            }
+        }
+    }
+
+    public void UnequipAll()
+    {
+        for(int i = 0; i < currentEquipment.Length; i++)
+        {
+            Unequip(i);
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetButton("Unequip"))
+        {
+            UnequipAll();
+        }
     }
 
 }
