@@ -8,13 +8,13 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 movement;
 
-    void Update()
+    void Update() // 取得角色座標
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
     }
 
-    void FixedUpdate() // 給物理的東西用(呼叫15次persec)
+    void FixedUpdate() // FixedUpdate()：自訂次數呼叫
     {
         rb.MovePosition(rb.position + movement * PlayerSpeed * Time.fixedDeltaTime);
     }

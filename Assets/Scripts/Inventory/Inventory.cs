@@ -24,7 +24,7 @@ public class Inventory : MonoBehaviour
 
     public List<Item> items = new List<Item>();
 
-    public int space = 20;
+    public int space = 100;
 
     public bool Add(Item item)
     {

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Interactable : MonoBehaviour
@@ -7,8 +5,6 @@ public class Interactable : MonoBehaviour
 
     public float radius;
     public Transform player;
-
-    // public bool hasInterected = false;
 
     public virtual void Interact()
     {
@@ -19,16 +15,8 @@ public class Interactable : MonoBehaviour
     private void Update()
     {
         float distance = Vector2.Distance(player.position, transform.position);
-        if (distance <= radius)
+        if (distance <= radius) // 進入範圍內後，觸發Interact()
         {
-            /* hasInterected = true;
-            
-            if (radius == distance) // Call不到，有可能因為判定太準確了(精準要那個距離)，可能需要另外一個distance界定邊緣範圍
-                {
-                    Debug.Log("Touch Edge");
-                    hasInterected= false;
-                }
-            */
             Interact();
         }
     }

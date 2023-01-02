@@ -20,4 +20,4 @@ public class Equipment : Item
 
 }
 
-public enum EquipmentSlot { Accessory, Weapon, Armor }
+public enum EquipmentSlot { Accessory, Weapon }
