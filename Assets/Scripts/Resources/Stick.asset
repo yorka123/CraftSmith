@@ -10,11 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7b6ba620892f3b42b60bbb88ca7b979, type: 3}
-  m_Name: HeartyHeart
+  m_Name: Stick
   m_EditorClassIdentifier: 
-  data:
-    name: Hearty Heart
-    icon: {fileID: 21300000, guid: 5a606ecd16ffd484e92af298361b6c18, type: 3}
-  equipSlot: 0
-  armorModifier: 10
-  DamageModifier: 0
+  icon: {fileID: 21300000, guid: 371cf9e72f4bdf947a48932c33025410, type: 3}
+  equipSlot: 1
+  armorModifier: 0
+  DamageModifier: 50

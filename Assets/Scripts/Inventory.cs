@@ -24,22 +24,20 @@ public class Inventory : MonoBehaviour
 
     public List<Item> items = new List<Item>();
 
-    public int space = 100;
+    public GameObject itemPrefeb;
+    public Transform itemPool;
 
-    public bool Add(Item item)
+    public void AddItem(Item item) // 將物件加入物品欄內
     {
-        if (items.Count < space) { 
-            items.Add(item);
+        items.Add(item); // 加入物品攔
 
-            if (onItemChangedCallback != null)
-                onItemChangedCallback(); // Invoke：就 執行 | 可簡化變成 委派名稱(參數群)
-            
-            return true;
+        GameObject itemObj = Instantiate(itemPrefeb, itemPool);
+        ItemDisplay display = itemObj.GetComponent<ItemDisplay>();
+        if (display != null) {
+            display.SetUp(item);
         }
-
-        Debug.Log("Not enough room."); 
-        // Bug：物品欄滿時，將裝備中的物品取下被判定空間不足，直接刪除
-        return false;
+        if (onItemChangedCallback != null)
+            onItemChangedCallback(); // Invoke：執行 | 可簡化變成 委派名稱(參數群)
     }
 
     public void Remove(Item item)

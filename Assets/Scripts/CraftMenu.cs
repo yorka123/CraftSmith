@@ -11,19 +11,18 @@ public class CraftMenu : MonoBehaviour
     }
     #endregion
 
-    public GameObject Menu;
-    public GameObject inventory;
+    public GameObject craftMenu;
 
     void Start()
     {
-        Menu.SetActive(false);
-        inventory.SetActive(false);
+
+        craftMenu.SetActive(false);
+
     }
 
     public void MenuOpen()
     {
-        Menu.SetActive(true);
-        inventory.SetActive(true);
+        craftMenu.SetActive(true);
 
         UIManager.Instance.Pause();
     }

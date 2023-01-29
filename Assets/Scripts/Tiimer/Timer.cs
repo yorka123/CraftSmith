@@ -32,7 +32,7 @@ public class Timer : MonoBehaviour
             }
         }
         
-        TimeSpan time = TimeSpan.FromSeconds(currentTime);
+        TimeSpan time = TimeSpan.FromSeconds(currentTime); //TimeSpan.FromSeconds(Value)：六十進位化
         currentTimeText.text = time.Seconds.ToString();
     }
 
