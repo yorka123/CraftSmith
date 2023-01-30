@@ -27,7 +27,7 @@ public class Inventory : MonoBehaviour
     public GameObject itemPrefeb;
     public Transform itemPool;
 
-    public void AddItem(Item item) // 將物件加入物品欄內
+    public void AddItemIntoInventory(Item item) // 將物件加入物品欄內
     {
         items.Add(item); // 加入物品攔
 

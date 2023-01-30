@@ -37,7 +37,7 @@ public class EquipManager : MonoBehaviour
         if(currentEquipment[slotIndex] != null)
         {
             oldItem= currentEquipment[slotIndex];
-            inventory.AddItem(oldItem);
+            inventory.AddItemIntoInventory(oldItem);
         } // 舊物品放回Inventory上
 
         if (onEquipmentChanged != null)
@@ -53,7 +53,7 @@ public class EquipManager : MonoBehaviour
         if (currentEquipment[slotIndex] != null)
         {
             Equipment oldItem = currentEquipment[slotIndex];
-            inventory.AddItem(oldItem);
+            inventory.AddItemIntoInventory(oldItem);
 
             currentEquipment[slotIndex] = null;
 

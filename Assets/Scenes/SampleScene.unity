@@ -1273,6 +1273,7 @@ GameObject:
   - component: {fileID: 779775456}
   - component: {fileID: 779775457}
   - component: {fileID: 779775458}
+  - component: {fileID: 779775459}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1293,7 +1294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items: []
-  itemPrefeb: {fileID: 7485549061898705169, guid: ea76a68d41b723041931f0440b782f4d, type: 3}
+  itemPrefeb: {fileID: 9041767702274117201, guid: ea76a68d41b723041931f0440b782f4d, type: 3}
   itemPool: {fileID: 383376017}
 --- !u!4 &779775455
 Transform:
@@ -1345,6 +1346,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3015ebff5fe0b914987d15a15d496d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &779775459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779775453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc70c8fadbf1ced4e8c20d5d49a360ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slot1: {fileID: 0}
+  slot2: {fileID: 0}
+  slot3: {fileID: 0}
+  recipe: []
+  resultParent: {fileID: 0}
+  itemPrefeb: {fileID: 0}
 --- !u!224 &795104924 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6713953438590043329, guid: 3ac9df9cab68e364c8c039d7c93754e3, type: 3}
@@ -2057,14 +2076,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 558181898}
     m_Modifications:
-    - target: {fileID: 3083623616262635949, guid: 3ac9df9cab68e364c8c039d7c93754e3, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3083623616262635949, guid: 3ac9df9cab68e364c8c039d7c93754e3, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6713953438590043329, guid: 3ac9df9cab68e364c8c039d7c93754e3, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2153,6 +2164,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: CraftSlot
       objectReference: {fileID: 0}
+    - target: {fileID: 8772037197098799237, guid: 3ac9df9cab68e364c8c039d7c93754e3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 779775459}
+    - target: {fileID: 8772037197098799237, guid: 3ac9df9cab68e364c8c039d7c93754e3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetSlotNum
+      objectReference: {fileID: 0}
+    - target: {fileID: 8772037197098799237, guid: 3ac9df9cab68e364c8c039d7c93754e3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ac9df9cab68e364c8c039d7c93754e3, type: 3}
 --- !u!1001 &1691007290
@@ -2162,6 +2185,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 558181898}
     m_Modifications:
+    - target: {fileID: 1797210646, guid: 3ac9df9cab68e364c8c039d7c93754e3, type: 3}
+      propertyPath: slotNum
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6713953438590043329, guid: 3ac9df9cab68e364c8c039d7c93754e3, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2249,6 +2276,18 @@ PrefabInstance:
     - target: {fileID: 7825393614266518283, guid: 3ac9df9cab68e364c8c039d7c93754e3, type: 3}
       propertyPath: m_Name
       value: CraftSlot (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8772037197098799237, guid: 3ac9df9cab68e364c8c039d7c93754e3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 779775459}
+    - target: {fileID: 8772037197098799237, guid: 3ac9df9cab68e364c8c039d7c93754e3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetSlotNum
+      objectReference: {fileID: 0}
+    - target: {fileID: 8772037197098799237, guid: 3ac9df9cab68e364c8c039d7c93754e3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ac9df9cab68e364c8c039d7c93754e3, type: 3}
@@ -2842,6 +2881,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 558181898}
     m_Modifications:
+    - target: {fileID: 1797210646, guid: 3ac9df9cab68e364c8c039d7c93754e3, type: 3}
+      propertyPath: slotNum
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1711500121178458547, guid: 3ac9df9cab68e364c8c039d7c93754e3, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0.000002861023
@@ -2937,6 +2980,18 @@ PrefabInstance:
     - target: {fileID: 7825393614266518283, guid: 3ac9df9cab68e364c8c039d7c93754e3, type: 3}
       propertyPath: m_Name
       value: CraftSlot (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8772037197098799237, guid: 3ac9df9cab68e364c8c039d7c93754e3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 779775459}
+    - target: {fileID: 8772037197098799237, guid: 3ac9df9cab68e364c8c039d7c93754e3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetSlotNum
+      objectReference: {fileID: 0}
+    - target: {fileID: 8772037197098799237, guid: 3ac9df9cab68e364c8c039d7c93754e3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1069263398843820663, guid: 3ac9df9cab68e364c8c039d7c93754e3, type: 3}

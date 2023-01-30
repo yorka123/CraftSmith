@@ -14,7 +14,7 @@ public class ItemPickup : Interactable // «Ýµ§¡GInteractable
     {
         if (Input.GetButtonDown("Submit"))
         {
-            Inventory.Instance.AddItem(item);
+            Inventory.Instance.AddItemIntoInventory(item);
 
             Debug.Log("Picking up " + item.name);
             Destroy(gameObject);
