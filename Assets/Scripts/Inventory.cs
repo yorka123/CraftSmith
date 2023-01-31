@@ -40,6 +40,13 @@ public class Inventory : MonoBehaviour
             onItemChangedCallback(); // Invoke：執行 | 可簡化變成 委派名稱(參數群)
     }
 
+    public void RemoveItemFromInventory(Item item)
+    {
+        items.Remove(item);
+        // 移除UI上的Image
+        // display = null?
+    }
+
     public void Remove(Item item)
     {
         items.Remove(item);

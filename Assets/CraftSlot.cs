@@ -7,6 +7,10 @@ public class CraftSlot : MonoBehaviour
 {
     public Item item;
     public Image image;
-    // public int slotNum;
+    public int slotNum;
 
+    public void OnClickCraftSlot()
+    {
+        Crafter.instance.SetSlotNum(slotNum);
+    }
 }

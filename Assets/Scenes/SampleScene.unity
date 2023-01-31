@@ -341,6 +341,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 293130002}
   m_CullTransparentMesh: 1
+--- !u!1 &379421061 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7825393614266518283, guid: 3ac9df9cab68e364c8c039d7c93754e3, type: 3}
+  m_PrefabInstance: {fileID: 1691007290}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &383376016
 GameObject:
   m_ObjectHideFlags: 0
@@ -1358,15 +1363,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc70c8fadbf1ced4e8c20d5d49a360ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slot1: {fileID: 0}
-  slot2: {fileID: 0}
-  slot3: {fileID: 0}
-  recipe: []
+  slot1: {fileID: 821644850}
+  slot2: {fileID: 1054956568}
+  slot3: {fileID: 379421061}
   resultParent: {fileID: 0}
   itemPrefeb: {fileID: 0}
 --- !u!224 &795104924 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6713953438590043329, guid: 3ac9df9cab68e364c8c039d7c93754e3, type: 3}
+  m_PrefabInstance: {fileID: 1676431683}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &821644850 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7825393614266518283, guid: 3ac9df9cab68e364c8c039d7c93754e3, type: 3}
   m_PrefabInstance: {fileID: 1676431683}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &871580347
@@ -1558,6 +1567,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Animator: {fileID: 1826621871}
+--- !u!1 &1054956568 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7825393614266518283, guid: 3ac9df9cab68e364c8c039d7c93754e3, type: 3}
+  m_PrefabInstance: {fileID: 2093846130}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1316366316
 GameObject:
   m_ObjectHideFlags: 0
@@ -2076,6 +2090,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 558181898}
     m_Modifications:
+    - target: {fileID: 1797210646, guid: 3ac9df9cab68e364c8c039d7c93754e3, type: 3}
+      propertyPath: image
+      value: 
+      objectReference: {fileID: 2001611399}
+    - target: {fileID: 3829478503906046382, guid: 3ac9df9cab68e364c8c039d7c93754e3, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3829478503906046382, guid: 3ac9df9cab68e364c8c039d7c93754e3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 6713953438590043329, guid: 3ac9df9cab68e364c8c039d7c93754e3, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2162,7 +2188,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7825393614266518283, guid: 3ac9df9cab68e364c8c039d7c93754e3, type: 3}
       propertyPath: m_Name
-      value: CraftSlot
+      value: CraftSlot1
       objectReference: {fileID: 0}
     - target: {fileID: 8772037197098799237, guid: 3ac9df9cab68e364c8c039d7c93754e3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2275,7 +2301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7825393614266518283, guid: 3ac9df9cab68e364c8c039d7c93754e3, type: 3}
       propertyPath: m_Name
-      value: CraftSlot (2)
+      value: CraftSlot3
       objectReference: {fileID: 0}
     - target: {fileID: 8772037197098799237, guid: 3ac9df9cab68e364c8c039d7c93754e3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2799,6 +2825,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6713953438590043329, guid: 3ac9df9cab68e364c8c039d7c93754e3, type: 3}
   m_PrefabInstance: {fileID: 2093846130}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2001611399 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3083623616262635949, guid: 3ac9df9cab68e364c8c039d7c93754e3, type: 3}
+  m_PrefabInstance: {fileID: 1676431683}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2053366377
 GameObject:
   m_ObjectHideFlags: 0
@@ -2979,7 +3016,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7825393614266518283, guid: 3ac9df9cab68e364c8c039d7c93754e3, type: 3}
       propertyPath: m_Name
-      value: CraftSlot (1)
+      value: CraftSlot2
       objectReference: {fileID: 0}
     - target: {fileID: 8772037197098799237, guid: 3ac9df9cab68e364c8c039d7c93754e3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
