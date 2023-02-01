@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Crafter : MonoBehaviour
 {
@@ -15,11 +16,13 @@ public class Crafter : MonoBehaviour
 
     #endregion
 
-    public Item slot1;
-    public Item slot2;
-    public Item slot3;
-    // Display
+    [SerializeField] GameObject slot1;
+    [SerializeField] GameObject slot2;
+    [SerializeField] GameObject slot3;
 
+    Item input1;
+    Item input2;
+    Item input3;
 
     Item addItem;
     int slotNum;
@@ -34,7 +37,8 @@ public class Crafter : MonoBehaviour
         recipes = Resources.LoadAll<Recipe>("Recipe");
     }
 
-    public void SetAddItem(Item item)
+    public void SetAddItem(Item item)// TODO：半透明化待加入CraftSlot的物件，
+                                     // 上個被選取的物件回復原樣(除了被選取進CraftSlot，同樣備辦透明化的的物件之外)
     {
         addItem= item;
         // Debug.Log("That Works!");
@@ -55,34 +59,53 @@ public class Crafter : MonoBehaviour
             switch (slotNum)
             {
                 case 1:
-                    slot1 = addItem; break;
+                    input1 = addItem;
+                    CraftSlotSetup(slot1); break;
                 case 2:
-                    slot2 = addItem; break;
+                    input2 = addItem;
+                    CraftSlotSetup(slot2); break;
                 case 3:
-                    slot3 = addItem; break;
+                    input3 = addItem;
+                    CraftSlotSetup(slot3); break;
             }
         }
     }
 
-    void CraftSlotDiaplay(GameObject slot) // 更新CraftSlot的image和item
-        //須改
+    public void CreateItem() // 產生合成物
     {
-        CraftSlot slotDisplay = slot.GetComponent<CraftSlot>();
-        slotDisplay.image.sprite = addItem.icon;
+        Item[] Results = GetResult();
+        
+        if (Results.Length > 0) // 若有合成出東西
+        {
+            foreach (Item item in Results) // 加入物品欄
+            {
+                Inventory.Instance.items.Add(item);
+            }
+            //Inventory.Instance.RemoveItemFromInventory();
+        }
+    }
+
+    void CraftSlotSetup(GameObject slot) //把CraftSlot的CraftSlotSetup搬過來(有點醜
+    {
+        CraftSlot Display = slot.GetComponent<CraftSlot>();
+        Display.CraftSlotSetup(addItem);
+        Inventory.Instance.Remove(addItem); // 清除物品欄上物件
     }
 
     Item[] GetResult() // 生成合成結果
     {
-        if (slot1 == null || slot2 == null || slot3 == null)
+        if (input1 == null || input2 == null || input3 == null) //如果有合成欄位空著
             return null;
 
-        List<Item> result = new List<Item>();
+        List<Item> results = new List<Item>();
 
-        foreach (Recipe recipe in recipes)
+        foreach (Recipe recipe in recipes) // 跑過整個recipe
         {
-            // 判斷是否符合任何recipe
+            if (recipe.item1 == input1 || recipe.item2 == input2 || recipe.item3 == input3) {
+                results.Add(recipe.Result); // ver1.0：固定配方
+            }
         }
-        return result.ToArray();
+        return results.ToArray();
     }
 
 }

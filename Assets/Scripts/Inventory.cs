@@ -34,17 +34,15 @@ public class Inventory : MonoBehaviour
         GameObject itemObj = Instantiate(itemPrefeb, itemPool);
         ItemDisplay display = itemObj.GetComponent<ItemDisplay>();
         if (display != null) {
-            display.SetUp(item);
+            display.Setup(item);
         }
         if (onItemChangedCallback != null)
             onItemChangedCallback(); // Invoke：執行 | 可簡化變成 委派名稱(參數群)
     }
 
-    public void RemoveItemFromInventory(Item item)
+    public void RemoveItemFromInventory(Item item) // TODO：合成成功後刪除Inventory內的三個GhostItem
     {
-        items.Remove(item);
-        // 移除UI上的Image
-        // display = null?
+
     }
 
     public void Remove(Item item)
