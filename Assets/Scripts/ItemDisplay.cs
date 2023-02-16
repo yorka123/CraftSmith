@@ -17,7 +17,7 @@ public class ItemDisplay : MonoBehaviour
 
     public void OnClickCraftingItem()
     {
-        Crafter.instance.SetAddItem(item);
+        Crafter.instance.SelectItem(this.gameObject);
         // Debug.Log("It works! The added item is" + item);
     }
 

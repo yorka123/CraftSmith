@@ -24,7 +24,7 @@ public class Crafter : MonoBehaviour
     Item input2;
     Item input3;
 
-    Item addItem;
+    GameObject addItem;
     int slotNum;
 
     Recipe[] recipes;
@@ -37,10 +37,11 @@ public class Crafter : MonoBehaviour
         recipes = Resources.LoadAll<Recipe>("Recipe");
     }
 
-    public void SetAddItem(Item item)// TODO：半透明化待加入CraftSlot的物件，
-                                     // 上個被選取的物件回復原樣(除了被選取進CraftSlot，同樣備辦透明化的的物件之外)
+    #region SetItem&SlotNum 設置物品+欄位編號
+    public void SelectItem(GameObject SelectedItem)// OnClick CraftingItem之後將其GameObject抓進addItem
+     
     {
-        addItem= item;
+        addItem = SelectedItem;
         // Debug.Log("That Works!");
         UpdateCraftSlot();
     }
@@ -51,7 +52,9 @@ public class Crafter : MonoBehaviour
         // Debug.Log("That Works! num:" + slotNum);
         UpdateCraftSlot();
     }
+    #endregion
 
+    #region UpdateSlot 更新欄位
     public void UpdateCraftSlot()  // 每次SetAddItem / SetSlotNum都更新一次
     {
         if (addItem != null && slotNum != 0) // 如果addItem和slotNum都有相對應參數
@@ -59,21 +62,24 @@ public class Crafter : MonoBehaviour
             switch (slotNum)
             {
                 case 1:
-                    input1 = addItem;
+                    input1 = addItem.GetComponent<ItemDisplay>().item;
                     CraftSlotSetup(slot1); break;
                 case 2:
-                    input2 = addItem;
+                    input2 = addItem.GetComponent<ItemDisplay>().item;
                     CraftSlotSetup(slot2); break;
                 case 3:
-                    input3 = addItem;
+                    input3 = addItem.GetComponent<ItemDisplay>().item;
                     CraftSlotSetup(slot3); break;
             }
         }
     }
+    #endregion
+
+    #region CreateItem 生成合成物
 
     public void CreateItem() // 產生合成物
     {
-        Item[] Results = GetResult();
+        Item[] Results = GetResult(); // 合成結果
         
         if (Results.Length > 0) // 若有合成出東西
         {
@@ -84,13 +90,22 @@ public class Crafter : MonoBehaviour
             //Inventory.Instance.RemoveItemFromInventory();
         }
     }
+    #endregion
 
-    void CraftSlotSetup(GameObject slot) //把CraftSlot的CraftSlotSetup搬過來(有點醜
+    #region SlotSetup 顯示合成用物品
+
+    void CraftSlotSetup(GameObject slot)
     {
-        CraftSlot Display = slot.GetComponent<CraftSlot>();
-        Display.CraftSlotSetup(addItem);
-        Inventory.Instance.Remove(addItem); // 清除物品欄上物件
+        
+        GameObject CraftItem = Instantiate(addItem, slot.transform);
+        ItemDisplay display = CraftItem.GetComponent<ItemDisplay>();
+        display.Setup(addItem.GetComponent<ItemDisplay>().item);
+
+        Inventory.Instance.Remove(addItem.GetComponent<ItemDisplay>().item); // 清除物品欄上物件
     }
+    #endregion
+
+    #region ifRecipe 配方判斷
 
     Item[] GetResult() // 生成合成結果
     {
@@ -107,5 +122,6 @@ public class Crafter : MonoBehaviour
         }
         return results.ToArray();
     }
+    #endregion
 
 }

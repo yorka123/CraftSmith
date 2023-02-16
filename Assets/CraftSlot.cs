@@ -28,7 +28,7 @@ public class CraftSlot : MonoBehaviour
     public void CraftSlotSetup(Item _item) //設定物件圖片到CraftSlot上
     {
         // Debug.Log(slotNum);
-        item = _item; 
+        item = _item;
         image.sprite = item.icon;
     }
 }
