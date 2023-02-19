@@ -81,13 +81,12 @@ public class Crafter : MonoBehaviour
     {
         Item[] Results = GetResult(); // 合成結果
         
-        if (Results.Length > 0) // 若有合成出東西
+        if (Results != null) // 若有合成出東西
         {
             foreach (Item item in Results) // 加入物品欄
             {
                 Inventory.Instance.items.Add(item);
             }
-            //Inventory.Instance.RemoveItemFromInventory();
         }
     }
     #endregion
@@ -96,8 +95,10 @@ public class Crafter : MonoBehaviour
 
     void CraftSlotSetup(GameObject slot)
     {
-        
-        GameObject CraftItem = Instantiate(addItem, slot.transform);
+        Transform pos = slot.transform;
+        Debug.Log(pos.position);
+        GameObject CraftItem = Instantiate(addItem, pos); // Bug:pos卡在一個特定的點，且Anchor被預設在左下角
+
         ItemDisplay display = CraftItem.GetComponent<ItemDisplay>();
         display.Setup(addItem.GetComponent<ItemDisplay>().item);
 
