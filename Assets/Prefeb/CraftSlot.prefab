@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000076293945, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5015334752789673020
@@ -243,7 +243,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17.6, y: 22.2}
+  m_AnchoredPosition: {x: 17.599976, y: 22.2}
   m_SizeDelta: {x: 25, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &269907205297058957
@@ -351,6 +351,7 @@ GameObject:
   - component: {fileID: 6713953438590043329}
   - component: {fileID: 4344353251487902153}
   - component: {fileID: 1797210646}
+  - component: {fileID: 4545535857083272827}
   m_Layer: 0
   m_Name: CraftSlot
   m_TagString: Untagged
@@ -405,6 +406,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f06d311358c384240bbf3ecfb6357b2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
-  image: {fileID: 3083623616262635949}
   slotNum: 1
+--- !u!114 &4545535857083272827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7825393614266518283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b2931b0e7bb7b147878a1fedbbd10c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 0}
+  icon: {fileID: 3083623616262635949}

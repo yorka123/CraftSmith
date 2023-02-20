@@ -40,11 +40,6 @@ public class Inventory : MonoBehaviour
             onItemChangedCallback(); // Invoke：執行 | 可簡化變成 委派名稱(參數群)
     }
 
-    public void RemoveItemFromInventory(Item item) // TODO：合成成功後刪除Inventory內的三個GhostItem
-    {
-
-    }
-
     public void Remove(Item item)
     {
         items.Remove(item);

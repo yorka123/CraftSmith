@@ -24,8 +24,8 @@ public class Crafter : MonoBehaviour
     Item input2;
     Item input3;
 
-    GameObject addItem;
-    int slotNum;
+    Item SelectedItem;
+    int index;
 
     Recipe[] recipes;
 
@@ -38,17 +38,17 @@ public class Crafter : MonoBehaviour
     }
 
     #region SetItem&SlotNum 設置物品+欄位編號
-    public void SelectItem(GameObject SelectedItem)// OnClick CraftingItem之後將其GameObject抓進addItem
+    public void SelectItem(Item selectedItem)// OnClick CraftingItem之後將其GameObject抓進addItem
      
     {
-        addItem = SelectedItem;
+        SelectedItem = selectedItem;
         // Debug.Log("That Works!");
         UpdateCraftSlot();
     }
 
     public void SetSlotNum(int SlotNum)
     {
-        slotNum = SlotNum;
+        index = SlotNum;
         // Debug.Log("That Works! num:" + slotNum);
         UpdateCraftSlot();
     }
@@ -57,18 +57,18 @@ public class Crafter : MonoBehaviour
     #region UpdateSlot 更新欄位
     public void UpdateCraftSlot()  // 每次SetAddItem / SetSlotNum都更新一次
     {
-        if (addItem != null && slotNum != 0) // 如果addItem和slotNum都有相對應參數
+        if (SelectedItem != null && index != 0) // 如果addItem和slotNum都有相對應參數
         {
-            switch (slotNum)
+            switch (index)
             {
                 case 1:
-                    input1 = addItem.GetComponent<ItemDisplay>().item;
+                    input1 = SelectedItem;
                     CraftSlotSetup(slot1); break;
                 case 2:
-                    input2 = addItem.GetComponent<ItemDisplay>().item;
+                    input2 = SelectedItem;
                     CraftSlotSetup(slot2); break;
                 case 3:
-                    input3 = addItem.GetComponent<ItemDisplay>().item;
+                    input3 = SelectedItem;
                     CraftSlotSetup(slot3); break;
             }
         }
@@ -95,14 +95,9 @@ public class Crafter : MonoBehaviour
 
     void CraftSlotSetup(GameObject slot)
     {
-        Transform pos = slot.transform;
-        Debug.Log(pos.position);
-        GameObject CraftItem = Instantiate(addItem, pos); // Bug:pos卡在一個特定的點，且Anchor被預設在左下角
-
-        ItemDisplay display = CraftItem.GetComponent<ItemDisplay>();
-        display.Setup(addItem.GetComponent<ItemDisplay>().item);
-
-        Inventory.Instance.Remove(addItem.GetComponent<ItemDisplay>().item); // 清除物品欄上物件
+        ItemDisplay display = slot.GetComponent<ItemDisplay>();
+        display.Setup(SelectedItem);
+        Inventory.Instance.Remove(SelectedItem); // 清除物品欄上物件
     }
     #endregion
 
@@ -126,3 +121,4 @@ public class Crafter : MonoBehaviour
     #endregion
 
 }
+// 改：用bool設置物品，當選擇slot/item時始被選擇的其bool selected = true，並UpdateSelection()
