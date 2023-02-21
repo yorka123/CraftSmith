@@ -87,6 +87,7 @@ public class Crafter : MonoBehaviour
             {
                 Inventory.Instance.items.Add(item);
             }
+            // Remove放在合成藍的東西
         }
     }
     #endregion
@@ -97,7 +98,7 @@ public class Crafter : MonoBehaviour
     {
         ItemDisplay display = slot.GetComponent<ItemDisplay>();
         display.Setup(SelectedItem);
-        Inventory.Instance.Remove(SelectedItem); // 清除物品欄上物件
+        // Inventory.Instance.Remove(SelectedItem); // 清除物品欄上物件 ?:放這裡對嗎
     }
     #endregion
 
