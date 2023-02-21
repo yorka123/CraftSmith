@@ -42,14 +42,12 @@ public class Crafter : MonoBehaviour
      
     {
         SelectedItem = selectedItem;
-        // Debug.Log("That Works!");
         UpdateCraftSlot();
     }
 
     public void SetSlotNum(int SlotNum)
     {
         index = SlotNum;
-        // Debug.Log("That Works! num:" + slotNum);
         UpdateCraftSlot();
     }
     #endregion
@@ -87,7 +85,9 @@ public class Crafter : MonoBehaviour
             {
                 Inventory.Instance.items.Add(item);
             }
-            // Remove放在合成藍的東西
+            Inventory.Instance.Remove(input1);
+            Inventory.Instance.items.Remove(input2);
+            Inventory.Instance.items.Remove(input3); // 移除被用作合成的道具
         }
     }
     #endregion
@@ -98,7 +98,6 @@ public class Crafter : MonoBehaviour
     {
         ItemDisplay display = slot.GetComponent<ItemDisplay>();
         display.Setup(SelectedItem);
-        // Inventory.Instance.Remove(SelectedItem); // 清除物品欄上物件 ?:放這裡對嗎
     }
     #endregion
 

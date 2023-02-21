@@ -7,6 +7,7 @@ public class Item : ScriptableObject //資源檔宣告
 {
 
     public Sprite icon;
+    public bool Selected;
 
     public virtual void Use()
     {
@@ -14,11 +15,6 @@ public class Item : ScriptableObject //資源檔宣告
         // Somthing will happen
 
         Debug.Log("Using " + name);
-    }
-
-    public void RemoveFromInventory()
-    {
-        Inventory.Instance.Remove(this);
     }
 
 }

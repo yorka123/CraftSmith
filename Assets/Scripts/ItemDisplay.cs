@@ -17,7 +17,9 @@ public class ItemDisplay : MonoBehaviour
 
     public void OnClickCraftingItem()
     {
-        Crafter.instance.SelectItem(item);
+        item.Selected = !item.Selected;
+        if (item.Selected) Crafter.instance.SelectItem(item);
+        else Crafter.instance.SelectItem(null);
     }
 
 }

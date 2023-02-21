@@ -15,7 +15,6 @@ public class Equipment : Item
     {
         base.Use();
         EquipManager.instance.Equip(this);
-        RemoveFromInventory();
     }
 
 }
