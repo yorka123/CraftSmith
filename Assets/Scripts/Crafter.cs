@@ -83,6 +83,7 @@ public class Crafter : MonoBehaviour
         {
             foreach (Item item in Results) // 加入物品欄
             {
+                Debug.Log(item + "created");
                 Inventory.Instance.items.Add(item);
             }
             Inventory.Instance.Remove(input1);
