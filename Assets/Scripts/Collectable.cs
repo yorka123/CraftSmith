@@ -3,8 +3,13 @@ using UnityEngine;
 public class Collectable : Interactable // «Ýµ§¡GInteractable
 {
     public Item item;
-    public Sprite icon;
-    
+    public SpriteRenderer icon;
+
+    private void Awake()
+    {
+        iconSetup();
+    }
+
     public override void Interact() // Ä~©Ó Iteract()(Interactable)
     {
         base.Interact();
@@ -24,7 +29,7 @@ public class Collectable : Interactable // «Ýµ§¡GInteractable
 
     void iconSetup()
     {
-        icon = item.icon;
+        icon.sprite = item.icon;
     }
 
 }

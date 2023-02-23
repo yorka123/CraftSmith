@@ -2177,38 +2177,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4440190008251015066, guid: 201d67c14540c2942b015fcace078a07, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5.307153
-      objectReference: {fileID: 0}
-    - target: {fileID: 4440190008251015066, guid: 201d67c14540c2942b015fcace078a07, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 5.307153
-      objectReference: {fileID: 0}
-    - target: {fileID: 4440190008251015066, guid: 201d67c14540c2942b015fcace078a07, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 5.307153
-      objectReference: {fileID: 0}
-    - target: {fileID: 4440190008251015066, guid: 201d67c14540c2942b015fcace078a07, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4440190008251015066, guid: 201d67c14540c2942b015fcace078a07, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.2584
-      objectReference: {fileID: 0}
-    - target: {fileID: 4681611884975986467, guid: 201d67c14540c2942b015fcace078a07, type: 3}
-      propertyPath: item
-      value: 
-      objectReference: {fileID: 11400000, guid: 1ce4289da85588449b2a8e9a4bd246a7, type: 2}
     - target: {fileID: 4681611884975986467, guid: 201d67c14540c2942b015fcace078a07, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1316366321}
-    - target: {fileID: 4681611884975986467, guid: 201d67c14540c2942b015fcace078a07, type: 3}
-      propertyPath: radius
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 6914196875137830993, guid: 201d67c14540c2942b015fcace078a07, type: 3}
       propertyPath: m_Name
       value: CollectingItem
@@ -2257,10 +2229,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7838601240257188240, guid: 201d67c14540c2942b015fcace078a07, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 5a606ecd16ffd484e92af298361b6c18, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 201d67c14540c2942b015fcace078a07, type: 3}
 --- !u!1 &1486148675
@@ -3151,38 +3119,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4440190008251015066, guid: 201d67c14540c2942b015fcace078a07, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5.307153
-      objectReference: {fileID: 0}
-    - target: {fileID: 4440190008251015066, guid: 201d67c14540c2942b015fcace078a07, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 5.307153
-      objectReference: {fileID: 0}
-    - target: {fileID: 4440190008251015066, guid: 201d67c14540c2942b015fcace078a07, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 5.307153
-      objectReference: {fileID: 0}
-    - target: {fileID: 4440190008251015066, guid: 201d67c14540c2942b015fcace078a07, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.28
-      objectReference: {fileID: 0}
-    - target: {fileID: 4440190008251015066, guid: 201d67c14540c2942b015fcace078a07, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.2584
-      objectReference: {fileID: 0}
-    - target: {fileID: 4681611884975986467, guid: 201d67c14540c2942b015fcace078a07, type: 3}
-      propertyPath: item
-      value: 
-      objectReference: {fileID: 11400000, guid: 1ce4289da85588449b2a8e9a4bd246a7, type: 2}
     - target: {fileID: 4681611884975986467, guid: 201d67c14540c2942b015fcace078a07, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1316366321}
-    - target: {fileID: 4681611884975986467, guid: 201d67c14540c2942b015fcace078a07, type: 3}
-      propertyPath: radius
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 6914196875137830993, guid: 201d67c14540c2942b015fcace078a07, type: 3}
       propertyPath: m_Name
       value: CollectingItem (1)
@@ -3231,10 +3171,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7838601240257188240, guid: 201d67c14540c2942b015fcace078a07, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 5a606ecd16ffd484e92af298361b6c18, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 201d67c14540c2942b015fcace078a07, type: 3}
 --- !u!1 &2053366377
