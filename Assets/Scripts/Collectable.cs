@@ -1,8 +1,9 @@
 using UnityEngine;
 
-public class ItemPickup : Interactable // «Ýµ§¡GInteractable
+public class Collectable : Interactable // «Ýµ§¡GInteractable
 {
     public Item item;
+    public Sprite icon;
     
     public override void Interact() // Ä~©Ó Iteract()(Interactable)
     {
@@ -19,8 +20,13 @@ public class ItemPickup : Interactable // «Ýµ§¡GInteractable
             Debug.Log("Picking up " + item.name);
             Destroy(gameObject);
         }
+    }
 
-
+    void iconSetup()
+    {
+        icon = item.icon;
     }
 
 }
+
+
