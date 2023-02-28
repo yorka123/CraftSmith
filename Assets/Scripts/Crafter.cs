@@ -84,8 +84,15 @@ public class Crafter : MonoBehaviour
             foreach (Item item in Results) // 加入物品欄
             {
                 Debug.Log(item + "created");
-                Inventory.Instance.items.Add(item);
+                Inventory.Instance.AddItemIntoInventory(item);
             }
+
+            Debug.Log("Items been removed:" + input1+input2+input3);
+
+            CraftSlotUnsetup(slot1);
+            CraftSlotUnsetup(slot2);
+            CraftSlotUnsetup(slot3);
+
             Inventory.Instance.Remove(input1);
             Inventory.Instance.items.Remove(input2);
             Inventory.Instance.items.Remove(input3); // 移除被用作合成的道具
@@ -93,12 +100,21 @@ public class Crafter : MonoBehaviour
     }
     #endregion
 
-    #region SlotSetup 顯示合成用物品
+    #region SlotSetup 合成用物件設置
 
     void CraftSlotSetup(GameObject slot)
     {
         ItemDisplay display = slot.GetComponent<ItemDisplay>();
         display.Setup(SelectedItem);
+    }
+    #endregion
+
+    #region 合成用物件移除
+
+    void CraftSlotUnsetup(GameObject slot)
+    {
+        ItemDisplay display = slot.GetComponent<ItemDisplay>();
+        display.Unsetup();
     }
     #endregion
 

@@ -27,7 +27,9 @@ public class Inventory : MonoBehaviour
     public GameObject itemPrefeb;
     public Transform itemPool;
 
-    public void AddItemIntoInventory(Item item) // 將物件加入物品欄內
+    #region 物件加入物品欄
+
+    public void AddItemIntoInventory(Item item)
     {
         items.Add(item); // 加入物品攔
 
@@ -35,17 +37,23 @@ public class Inventory : MonoBehaviour
         ItemDisplay display = itemObj.GetComponent<ItemDisplay>();
         if (display != null) {
             display.Setup(item);
+            display.ItemParent = itemPool.gameObject; // 抓CraftingItem的母物件
         }
         if (onItemChangedCallback != null)
             onItemChangedCallback(); // Invoke：執行 | 可簡化變成 委派名稱(參數群)
     }
+    #endregion
+
+    #region 物件至物品欄移除
 
     public void Remove(Item item)
     {
         items.Remove(item);
 
+        Debug.Log(items.Contains(item));
+
         if (onItemChangedCallback != null)
             onItemChangedCallback.Invoke();
     }
-
+    #endregion
 }
