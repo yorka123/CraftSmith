@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class Crafter : MonoBehaviour
 {
@@ -25,6 +24,8 @@ public class Crafter : MonoBehaviour
     Item input3;
 
     Item SelectedItem;
+    GameObject SelectedObject;
+    GameObject OldItem;
     int index;
 
     Recipe[] recipes;
@@ -38,10 +39,11 @@ public class Crafter : MonoBehaviour
     }
 
     #region SetItem&SlotNum 設置物品+欄位編號
-    public void SelectItem(Item selectedItem)// OnClick CraftingItem之後將其GameObject抓進addItem
+    public void SelectItem(Item selectedItem, GameObject selectedObject)// OnClick CraftingItem之後將其GameObject抓進addItem
      
     {
         SelectedItem = selectedItem;
+        SelectedObject= selectedObject;
         UpdateCraftSlot();
     }
 
@@ -61,13 +63,22 @@ public class Crafter : MonoBehaviour
             {
                 case 1:
                     input1 = SelectedItem;
-                    CraftSlotSetup(slot1); break;
+                    CraftSlotSetup(slot1);
+                    OldItem = Instantiate(SelectedObject);
+                    Destroy(SelectedObject); 
+                    Instantiate(OldItem, Inventory.Instance.itemPool); break;
                 case 2:
                     input2 = SelectedItem;
-                    CraftSlotSetup(slot2); break;
+                    CraftSlotSetup(slot2);
+                    OldItem = Instantiate(SelectedObject);
+                    Destroy(SelectedObject);
+                    Instantiate(OldItem, Inventory.Instance.itemPool); break;
                 case 3:
                     input3 = SelectedItem;
-                    CraftSlotSetup(slot3); break;
+                    CraftSlotSetup(slot3);
+                    OldItem = Instantiate(SelectedObject);
+                    Destroy(SelectedObject);
+                    Instantiate(OldItem, Inventory.Instance.itemPool); break;                       
             }
         }
     }

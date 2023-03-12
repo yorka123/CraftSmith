@@ -35,13 +35,11 @@ public class ItemDisplay : MonoBehaviour
         if (item.Selected)
         {
             ItemParent.GetComponentInChildren<ItemDisplay>().item.Selected = false; // 設置其他物件的Selected為false
-            Crafter.instance.SelectItem(item);
+            Crafter.instance.SelectItem(item, gameObject);
         }
         else
         {
-            Crafter.instance.SelectItem(null); 
-
-            Debug.Log(this.name + "Unselected");
+            Crafter.instance.SelectItem(null, null); 
         }
 
     }

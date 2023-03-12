@@ -31,16 +31,20 @@ public class Inventory : MonoBehaviour
 
     public void AddItemIntoInventory(Item item)
     {
-        items.Add(item); // 加入物品攔
+        if (item != null)
+        {
+            items.Add(item); // 加入物品攔
 
-        GameObject itemObj = Instantiate(itemPrefeb, itemPool);
-        ItemDisplay display = itemObj.GetComponent<ItemDisplay>();
-        if (display != null) {
-            display.Setup(item);
-            display.ItemParent = itemPool.gameObject; // 抓CraftingItem的母物件
+            GameObject itemObj = Instantiate(itemPrefeb, itemPool);
+            ItemDisplay display = itemObj.GetComponent<ItemDisplay>();
+            if (display != null)
+            {
+                display.Setup(item);
+                display.ItemParent = itemPool.gameObject; // 抓CraftingItem的母物件
+            }
+            if (onItemChangedCallback != null)
+                onItemChangedCallback(); // Invoke：執行 | 可簡化變成 委派名稱(參數群)
         }
-        if (onItemChangedCallback != null)
-            onItemChangedCallback(); // Invoke：執行 | 可簡化變成 委派名稱(參數群)
     }
     #endregion
 
